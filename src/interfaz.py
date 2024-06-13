@@ -42,33 +42,33 @@ def iniciar_interfaz():
     boton8 = tk.Button(frame,text="8",width=3,padx=10,pady=10,command=lambda:pulsarNumero("8",numero_pantalla))
     boton8.grid(row=3,column=2)
 
-    boton9 = tk.Button(frame,text="9",width=3,padx=10,pady=10)
+    boton9 = tk.Button(frame,text="9",width=3,padx=10,pady=10,command=lambda:pulsarNumero("9",numero_pantalla))
     boton9.grid(row=3,column=3)
 
     botonDividir = tk.Button(frame,text="÷",width=3,padx=10,pady=10,bg="lightgrey",command=lambda:pulsarDivision(numero_pantalla))
     botonDividir.grid(row=3,column=4)
 
     #=========== FILA 3 ===============
-    boton4 = tk.Button(frame,text="4",width=3,padx=10,pady=10)
+    boton4 = tk.Button(frame,text="4",width=3,padx=10,pady=10,command=lambda:pulsarNumero("4",numero_pantalla))
     boton4.grid(row=4,column=1)
 
-    boton5 = tk.Button(frame,text="5",width=3,padx=10,pady=10)
+    boton5 = tk.Button(frame,text="5",width=3,padx=10,pady=10,command=lambda:pulsarNumero("5",numero_pantalla))
     boton5.grid(row=4,column=2)
 
-    boton6 = tk.Button(frame,text="6",width=3,padx=10,pady=10)
+    boton6 = tk.Button(frame,text="6",width=3,padx=10,pady=10,command=lambda:pulsarNumero("6",numero_pantalla))
     boton6.grid(row=4,column=3)
 
     botonRestar = tk.Button(frame,text="-",width=3,padx=10,pady=10,bg="lightgrey",command=lambda:pulsarResta(numero_pantalla))
     botonRestar.grid(row=4,column=4)
 
     #=========== FILA 4 ===============
-    boton1 = tk.Button(frame,text="1",width=3,padx=10,pady=10)
+    boton1 = tk.Button(frame,text="1",width=3,padx=10,pady=10,command=lambda:pulsarNumero("1",numero_pantalla))
     boton1.grid(row=5,column=1)
 
-    boton2 = tk.Button(frame,text="2",width=3,padx=10,pady=10)
+    boton2 = tk.Button(frame,text="2",width=3,padx=10,pady=10,command=lambda:pulsarNumero("2",numero_pantalla))
     boton2.grid(row=5,column=2)
 
-    boton3 = tk.Button(frame,text="3",width=3,padx=10,pady=10)
+    boton3 = tk.Button(frame,text="3",width=3,padx=10,pady=10,command=lambda:pulsarNumero("3",numero_pantalla))
     boton3.grid(row=5,column=3)
 
     botonSumar = tk.Button(frame,text="+",width=3,padx=10,pady=10,bg="lightgrey",command=lambda:pulsarSuma(numero_pantalla))
@@ -78,7 +78,7 @@ def iniciar_interfaz():
     botonMasMenos = tk.Button(frame,text="+/-",width=3,padx=10,pady=10,bg="lightgrey",command=lambda:pulsarMasMenos(numero_pantalla))
     botonMasMenos.grid(row=6,column=1)
 
-    boton0 = tk.Button(frame,text="0",width=3,padx=10,pady=10)
+    boton0 = tk.Button(frame,text="0",width=3,padx=10,pady=10,command=lambda:pulsarNumero("0",numero_pantalla))
     boton0.grid(row=6,column=2)
 
     botonComa = tk.Button(frame,text=",",width=3,padx=10,pady=10,bg="lightgrey",command=lambda:pulsarComa(numero_pantalla))
