@@ -158,5 +158,22 @@ def pulsarResultado(numero_pantalla):
         elif operacion_multiplicar:
             operacion_multiplicar = realizar_operacion(multiplicar)
         
+def pulsarC(numero_pantalla):
+    global primer_operador
+    global segundo_operador
+    global operacion_sumar
+    global operacion_restar
+    global operacion_dividir
+    global operacion_multiplicar
+    global resultado
 
+    numero_pantalla.set("0")
+    primer_operador = ""
+    segundo_operador = ""
+    operacion_sumar = False
+    operacion_restar = False
+    operacion_restar = False
+    operacion_dividir = False
+    operacion_multiplicar = False
+    resultado = 0
 
