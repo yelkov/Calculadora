@@ -2,6 +2,7 @@ from .operaciones import *
 
 añadir_numero = True
 operacion_sumar = False
+operacion_restar = False
 primer_operador = ""
 segundo_operador = ""
 resultado = 0
@@ -41,8 +42,26 @@ def pulsarSuma(numero_pantalla):
 
         primer_operador = ""
 
+def pulsarResta(numero_pantalla):
+    global añadir_numero
+    global operacion_restar
+    global primer_operador
+    global segundo_operador
+    global resultado
+
+    añadir_numero = False
+    operacion_restar = True
+
+    if primer_operador != "":
+        segundo_operador = numero_pantalla.get()
+        resultado = restar(int(primer_operador),int(segundo_operador))
+        numero_pantalla.set(resultado)
+
+        primer_operador = ""
+
 def pulsarResultado(numero_pantalla):
     global operacion_sumar
+    global operacion_restar
     global primer_operador 
     global segundo_operador
     global resultado
@@ -62,5 +81,14 @@ def pulsarResultado(numero_pantalla):
             resultado = 0
             primer_operador = ""
             operacion_sumar = False
+
+        elif operacion_restar:
+            segundo_operador = numero_pantalla.get()
+            resultado = restar(int(primer_operador),int(segundo_operador)) 
+            numero_pantalla.set(resultado)
+
+            resultado = 0
+            primer_operador = ""
+            operacion_restar = False
 
 

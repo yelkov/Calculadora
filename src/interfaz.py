@@ -58,7 +58,7 @@ def iniciar_interfaz():
     boton6 = tk.Button(frame,text="6",width=3,padx=10,pady=10)
     boton6.grid(row=4,column=3)
 
-    botonRestar = tk.Button(frame,text="-",width=3,padx=10,pady=10,bg="lightgrey")
+    botonRestar = tk.Button(frame,text="-",width=3,padx=10,pady=10,bg="lightgrey",command=lambda:pulsarResta(numero_pantalla))
     botonRestar.grid(row=4,column=4)
 
     #=========== FILA 4 ===============
