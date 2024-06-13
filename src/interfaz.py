@@ -81,7 +81,7 @@ def iniciar_interfaz():
     boton0 = tk.Button(frame,text="0",width=3,padx=10,pady=10)
     boton0.grid(row=6,column=2)
 
-    botonComa = tk.Button(frame,text=",",width=3,padx=10,pady=10,bg="lightgrey")
+    botonComa = tk.Button(frame,text=",",width=3,padx=10,pady=10,bg="lightgrey",command=lambda:pulsarComa(numero_pantalla))
     botonComa.grid(row=6,column=3)
 
     botonResultado = tk.Button(frame,text="=",width=3,padx=10,pady=10,bg="grey",command=lambda:pulsarResultado(numero_pantalla))

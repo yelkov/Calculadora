@@ -27,6 +27,12 @@ def pulsarNumero(tecla_numero, numero_pantalla):
         
         añadir_numero = True
 
+def pulsarComa(numero_pantalla):
+    global añadir_numero
+
+    if añadir_numero and "." not in numero_pantalla.get():
+        numero_pantalla.set(numero_pantalla.get()+".")
+
 def pulsarSuma(numero_pantalla):
     global añadir_numero
     global operacion_sumar
@@ -39,7 +45,9 @@ def pulsarSuma(numero_pantalla):
 
     if primer_operador != "":
         segundo_operador = numero_pantalla.get()
-        resultado = sumar(int(primer_operador),int(segundo_operador))
+        resultado = sumar(float(primer_operador),float(segundo_operador))
+        if resultado.is_integer():
+            resultado = int(resultado)
         numero_pantalla.set(resultado)
 
         primer_operador = ""
@@ -56,7 +64,9 @@ def pulsarResta(numero_pantalla):
 
     if primer_operador != "":
         segundo_operador = numero_pantalla.get()
-        resultado = restar(int(primer_operador),int(segundo_operador))
+        resultado = restar(float(primer_operador),float(segundo_operador))
+        if resultado.is_integer():
+            resultado = int(resultado)
         numero_pantalla.set(resultado)
 
         primer_operador = ""
@@ -73,7 +83,9 @@ def pulsarDivision(numero_pantalla):
 
     if primer_operador != "":
         segundo_operador = numero_pantalla.get()
-        resultado = dividir(int(primer_operador),int(segundo_operador))
+        resultado = dividir(float(primer_operador),float(segundo_operador))
+        if resultado.is_integer():
+            resultado = int(resultado)
         numero_pantalla.set(resultado)
 
         primer_operador = ""
@@ -90,7 +102,9 @@ def pulsarMultiplica(numero_pantalla):
 
     if primer_operador != "":
         segundo_operador = numero_pantalla.get()
-        resultado = multiplicar(int(primer_operador),int(segundo_operador))
+        resultado = multiplicar(float(primer_operador),float(segundo_operador))
+        if resultado.is_integer():
+            resultado = int(resultado)
         numero_pantalla.set(resultado)
 
         primer_operador = ""
@@ -108,7 +122,9 @@ def pulsarResultado(numero_pantalla):
     def realizar_operacion(operacion):
         global primer_operador
         segundo_operador = numero_pantalla.get()
-        resultado = operacion(int(primer_operador), int(segundo_operador))
+        resultado = operacion(float(primer_operador), float(segundo_operador))
+        if resultado.is_integer():
+            resultado = int(resultado)
         numero_pantalla.set(resultado)
 
         resultado = 0
