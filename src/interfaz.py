@@ -45,7 +45,7 @@ def iniciar_interfaz():
     boton9 = tk.Button(frame,text="9",width=3,padx=10,pady=10)
     boton9.grid(row=3,column=3)
 
-    botonDividir = tk.Button(frame,text="÷",width=3,padx=10,pady=10,bg="lightgrey")
+    botonDividir = tk.Button(frame,text="÷",width=3,padx=10,pady=10,bg="lightgrey",command=lambda:pulsarDivision(numero_pantalla))
     botonDividir.grid(row=3,column=4)
 
     #=========== FILA 3 ===============

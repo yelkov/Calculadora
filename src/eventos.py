@@ -3,6 +3,7 @@ from .operaciones import *
 añadir_numero = True
 operacion_sumar = False
 operacion_restar = False
+operacion_dividir = False
 primer_operador = ""
 segundo_operador = ""
 resultado = 0
@@ -59,9 +60,27 @@ def pulsarResta(numero_pantalla):
 
         primer_operador = ""
 
+def pulsarDivision(numero_pantalla):
+    global añadir_numero
+    global operacion_dividir
+    global primer_operador
+    global segundo_operador
+    global resultado
+
+    añadir_numero = False
+    operacion_dividir = True
+
+    if primer_operador != "":
+        segundo_operador = numero_pantalla.get()
+        resultado = dividir(int(primer_operador),int(segundo_operador))
+        numero_pantalla.set(resultado)
+
+        primer_operador = ""
+
 def pulsarResultado(numero_pantalla):
     global operacion_sumar
     global operacion_restar
+    global operacion_dividir
     global primer_operador 
     global segundo_operador
     global resultado
@@ -90,5 +109,16 @@ def pulsarResultado(numero_pantalla):
             resultado = 0
             primer_operador = ""
             operacion_restar = False
+
+        elif operacion_dividir:
+            segundo_operador = numero_pantalla.get()
+            resultado = dividir(int(primer_operador),int(segundo_operador)) 
+            numero_pantalla.set(resultado)
+
+            resultado = 0
+            primer_operador = ""
+            operacion_dividir = False
+
+        
 
 
