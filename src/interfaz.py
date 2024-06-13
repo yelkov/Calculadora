@@ -1,5 +1,6 @@
 import tkinter as tk
-from eventos import *
+from .eventos import * 
+from .operaciones import *
 
 def iniciar_interfaz():
 
@@ -14,9 +15,9 @@ def iniciar_interfaz():
     frame.pack()
 
     #=========== PANTALLA ===============
-    numeroPantalla = tk.StringVar()
+    numero_pantalla = tk.StringVar()
 
-    pantalla = tk.Entry(frame,textvariable=numeroPantalla, font=32)
+    pantalla = tk.Entry(frame,textvariable=numero_pantalla, font=32)
     pantalla.grid(row=1,column=0,pady=20,columnspan=5)
     pantalla.config(bg="black",fg="#03f943",justify="right")
     pantalla.insert(0,"0")
@@ -35,10 +36,10 @@ def iniciar_interfaz():
     botonMultiplicar.grid(row=2,column=4)
 
     #=========== FILA 2 ===============
-    boton7 = tk.Button(frame,text="7",width=3,padx=10,pady=10,command=lambda:pulsarBoton("7",numeroPantalla))
+    boton7 = tk.Button(frame,text="7",width=3,padx=10,pady=10,command=lambda:pulsarNumero("7",numero_pantalla))
     boton7.grid(row=3,column=1)
 
-    boton8 = tk.Button(frame,text="8",width=3,padx=10,pady=10)
+    boton8 = tk.Button(frame,text="8",width=3,padx=10,pady=10,command=lambda:pulsarNumero("8",numero_pantalla))
     boton8.grid(row=3,column=2)
 
     boton9 = tk.Button(frame,text="9",width=3,padx=10,pady=10)
@@ -70,7 +71,7 @@ def iniciar_interfaz():
     boton3 = tk.Button(frame,text="3",width=3,padx=10,pady=10)
     boton3.grid(row=5,column=3)
 
-    botonSumar = tk.Button(frame,text="+",width=3,padx=10,pady=10,bg="lightgrey")
+    botonSumar = tk.Button(frame,text="+",width=3,padx=10,pady=10,bg="lightgrey",command=lambda:pulsarSuma(numero_pantalla))
     botonSumar.grid(row=5,column=4)
 
     #=========== FILA 5 ===============
@@ -83,7 +84,7 @@ def iniciar_interfaz():
     botonComa = tk.Button(frame,text=",",width=3,padx=10,pady=10,bg="lightgrey")
     botonComa.grid(row=6,column=3)
 
-    botonResultado = tk.Button(frame,text="=",width=3,padx=10,pady=10,bg="grey")
+    botonResultado = tk.Button(frame,text="=",width=3,padx=10,pady=10,bg="grey",command=lambda:pulsarResultado(numero_pantalla))
     botonResultado.grid(row=6,column=4)
 
     #=========== EJECUTAR ===============
@@ -91,5 +92,4 @@ def iniciar_interfaz():
     raiz.mainloop()
 
 
-iniciar_interfaz()
 
