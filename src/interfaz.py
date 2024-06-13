@@ -32,7 +32,7 @@ def iniciar_interfaz():
     botonC = tk.Button(frame,text="C",width=3,padx=7,pady=7,background="#fc7",font="bold")
     botonC.grid(row=2,column=3)
 
-    botonMultiplicar = tk.Button(frame,text="×",width=3,padx=10,pady=10,bg="lightgrey")
+    botonMultiplicar = tk.Button(frame,text="×",width=3,padx=10,pady=10,bg="lightgrey",command=lambda:pulsarMultiplica(numero_pantalla))
     botonMultiplicar.grid(row=2,column=4)
 
     #=========== FILA 2 ===============
