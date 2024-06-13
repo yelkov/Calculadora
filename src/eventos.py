@@ -33,6 +33,19 @@ def pulsarComa(numero_pantalla):
     if añadir_numero and "." not in numero_pantalla.get():
         numero_pantalla.set(numero_pantalla.get()+".")
 
+def pulsarMasMenos(numero_pantalla):
+    global añadir_numero
+
+    if añadir_numero:
+        if numero_pantalla.get()[0] != "-":
+            numero_pantalla.set("-" + numero_pantalla.get())
+        else:
+            numero_pantalla.set(numero_pantalla.get()[1:])
+    else:
+        numero_pantalla.set("-")
+        añadir_numero = True
+
+ 
 def pulsarSuma(numero_pantalla):
     global añadir_numero
     global operacion_sumar

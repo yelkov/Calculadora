@@ -75,7 +75,7 @@ def iniciar_interfaz():
     botonSumar.grid(row=5,column=4)
 
     #=========== FILA 5 ===============
-    botonMasMenos = tk.Button(frame,text="+/-",width=3,padx=10,pady=10,bg="lightgrey")
+    botonMasMenos = tk.Button(frame,text="+/-",width=3,padx=10,pady=10,bg="lightgrey",command=lambda:pulsarMasMenos(numero_pantalla))
     botonMasMenos.grid(row=6,column=1)
 
     boton0 = tk.Button(frame,text="0",width=3,padx=10,pady=10)
