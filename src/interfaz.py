@@ -26,7 +26,7 @@ def iniciar_interfaz():
     botonVacio1 = tk.Frame(frame,width=47,height=40,padx=10,bd=1,relief="groove")
     botonVacio1.grid(row=2,column=1)
 
-    botonAtras = tk.Button(frame,text="←",width=3,padx=10,pady=10,background="lightgrey")
+    botonAtras = tk.Button(frame,text="←",width=3,padx=10,pady=10,background="lightgrey",command=lambda:pulsarBorrarUltimo(numero_pantalla))
     botonAtras.grid(row=2,column=2)
 
     botonC = tk.Button(frame,text="C",width=3,padx=7,pady=7,background="#fc7",font="bold",command=lambda:pulsarC(numero_pantalla))

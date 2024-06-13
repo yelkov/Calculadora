@@ -157,6 +157,27 @@ def pulsarResultado(numero_pantalla):
             operacion_dividir = realizar_operacion(dividir)
         elif operacion_multiplicar:
             operacion_multiplicar = realizar_operacion(multiplicar)
+
+def pulsarBorrarUltimo(numero_pantalla):
+    global añadir_numero
+    global primer_operador
+    global operacion_sumar
+    global operacion_restar
+    global operacion_dividir
+    global operacion_multiplicar
+
+    if añadir_numero:
+        numero_pantalla.set(numero_pantalla.get()[:-1])
+        if numero_pantalla.get() == "":
+            numero_pantalla.set("0")
+    else:
+        numero_pantalla.set(primer_operador)
+        añadir_numero = True
+        operacion_sumar = False
+        operacion_restar = False
+        operacion_dividir = False
+        operacion_multiplicar = False
+
         
 def pulsarC(numero_pantalla):
     global primer_operador
