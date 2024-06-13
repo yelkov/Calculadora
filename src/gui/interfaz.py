@@ -1,4 +1,5 @@
 import tkinter as tk
+from eventos import *
 
 def iniciar_interfaz():
 
@@ -34,7 +35,7 @@ def iniciar_interfaz():
     botonMultiplicar.grid(row=2,column=4)
 
     #=========== FILA 2 ===============
-    boton7 = tk.Button(frame,text="7",width=3,padx=10,pady=10)
+    boton7 = tk.Button(frame,text="7",width=3,padx=10,pady=10,command=lambda:pulsarBoton("7",numeroPantalla))
     boton7.grid(row=3,column=1)
 
     boton8 = tk.Button(frame,text="8",width=3,padx=10,pady=10)
