@@ -105,49 +105,29 @@ def pulsarResultado(numero_pantalla):
     global segundo_operador
     global resultado
 
-    if primer_operador == "":
-        resultado = numero_pantalla.get()
+    def realizar_operacion(operacion):
+        global primer_operador
+        segundo_operador = numero_pantalla.get()
+        resultado = operacion(int(primer_operador), int(segundo_operador))
         numero_pantalla.set(resultado)
 
         resultado = 0
+        primer_operador = ""
+        return False  
 
+    if primer_operador == "":
+        resultado = numero_pantalla.get()
+        numero_pantalla.set(resultado)
+        resultado = 0
     else:
         if operacion_sumar:
-            segundo_operador = numero_pantalla.get()
-            resultado = sumar(int(primer_operador),int(segundo_operador))
-            numero_pantalla.set(resultado)
-
-            resultado = 0
-            primer_operador = ""
-            operacion_sumar = False
-
+            operacion_sumar = realizar_operacion(sumar)
         elif operacion_restar:
-            segundo_operador = numero_pantalla.get()
-            resultado = restar(int(primer_operador),int(segundo_operador)) 
-            numero_pantalla.set(resultado)
-
-            resultado = 0
-            primer_operador = ""
-            operacion_restar = False
-
+            operacion_restar = realizar_operacion(restar)
         elif operacion_dividir:
-            segundo_operador = numero_pantalla.get()
-            resultado = dividir(int(primer_operador),int(segundo_operador)) 
-            numero_pantalla.set(resultado)
-
-            resultado = 0
-            primer_operador = ""
-            operacion_dividir = False
-
+            operacion_dividir = realizar_operacion(dividir)
         elif operacion_multiplicar:
-            segundo_operador = numero_pantalla.get()
-            resultado = multiplicar(int(primer_operador),int(segundo_operador)) 
-            numero_pantalla.set(resultado)
-
-            resultado = 0
-            primer_operador = ""
-            operacion_multiplicar = False
-
+            operacion_multiplicar = realizar_operacion(multiplicar)
         
 
 
